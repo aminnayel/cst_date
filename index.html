@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,14 @@ var remoteSources = [{
         url: 'https://api.timezonedb.com/v2.1/get-time-zone?key=0KETK3ZXGYAD&format=json&by=zone&zone=America/Chicago',
         processData: function(data) {
             //formatted
-            return `${moment(data.formatted).format('ddd HHmm')}`
+
+            var dateString = data.formatted; // For example
+            var date = moment(dateString);
+
+            var newDate = date.add(3, 'days');
+            var newDateString = newDate.format('MM-DD-YYYY');
+            return newDateString
+            // return `${moment(dateString).format('ddd HHmm')}`
 
         }
     },
@@ -34,8 +42,15 @@ var remoteSources = [{
 
         url: 'https://worldtimeapi.org/api/timezone/CST6CDT',
         processData: function(data) {
-            //datetime
-            return `${moment(data.datetime.slice(0,-6)).format('ddd HHmm')}`
+
+            var dateString = data.datetime.slice(0,-6); // For example
+            var date = moment(dateString);
+
+            var newDate = date.add(3, 'days');
+            var newDateString = newDate.format('MM-DD-YYYY');
+            return newDateString
+
+            
         }
     }
 
