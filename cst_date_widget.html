@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width"><title>http://
+shots.jotform.com/amin/f/simro/index.html?
+qid=526&amp;isOpenedInPortal=undefined&amp;align=Left&amp;ref=https%3A%2F%2Fwww.jotform.com&amp;injectCSS=false</title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="highlight" style="tab-size: 4"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
+<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">lang</span>="<a class="attribute-value">en</a>"&gt;</span><span>
+<span id="line3"></span></span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
+<span id="line4"></span>    </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>CST Time</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line5"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>"&gt;</span><span>
+<span id="line6"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">http-equiv</span>="<a class="attribute-value">X-UA-Compatible</a>" <span class="attribute-name">content</span>="<a class="attribute-value">IE=edge</a>"&gt;</span><span>
+<span id="line7"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, initial-scale=1.0</a>"&gt;</span><span>
+<span id="line8"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js">https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js</a>"  <span class="attribute-name">crossorigin</span>="<a class="attribute-value">anonymous</a>" <span class="attribute-name">referrerpolicy</span>="<a class="attribute-value">no-referrer</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line9"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone.min.js">https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone.min.js</a>" <span class="attribute-name">crossorigin</span>="<a class="attribute-value">anonymous</a>" <span class="attribute-name">referrerpolicy</span>="<a class="attribute-value">no-referrer</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line10"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line11"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://js.jotform.com/JotFormCustomWidget.min.js">https://js.jotform.com/JotFormCustomWidget.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line12"></span>    
+<span id="line13"></span>
+<span id="line14"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
+<span id="line15"></span></span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
+<span id="line16"></span>    </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">style</span>="<a class="attribute-value">min-width: 250px;</a>" <span class="attribute-name">id</span>="<a class="attribute-value">CST_Time</a>"&gt;</span><span>
+<span id="line17"></span>    </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line18"></span>        
+<span id="line19"></span>        function fetchTime() {
+<span id="line20"></span>
+<span id="line21"></span>var divCST = document.getElementById('CST_Time');
+<span id="line22"></span>
+<span id="line23"></span>var remoteSources = [{
+<span id="line24"></span>
+<span id="line25"></span>        url: 'https://api.timezonedb.com/v2.1/get-time-zone?key=0KETK3ZXGYAD&amp;format=json&amp;by=zone&amp;zone=America/Chicago',
+<span id="line26"></span>        processData: function(data) {
+<span id="line27"></span>            //formatted
+<span id="line28"></span>            return `${moment(data.formatted).format('ddd HHmm')}`
+<span id="line29"></span>
+<span id="line30"></span>        }
+<span id="line31"></span>    },
+<span id="line32"></span>
+<span id="line33"></span>    {
+<span id="line34"></span>
+<span id="line35"></span>        url: 'https://worldtimeapi.org/api/timezone/CST6CDT',
+<span id="line36"></span>        processData: function(data) {
+<span id="line37"></span>            //datetime
+<span id="line38"></span>            return `${moment(data.datetime.slice(0,-6)).format('ddd HHmm')}`
+<span id="line39"></span>        }
+<span id="line40"></span>    }
+<span id="line41"></span>
+<span id="line42"></span>
+<span id="line43"></span>
+<span id="line44"></span>
+<span id="line45"></span>];
+<span id="line46"></span>
+<span id="line47"></span>
+<span id="line48"></span>function localSource() {
+<span id="line49"></span>
+<span id="line50"></span>    return moment.utc().add(-5, 'hours').format('ddd HHmm')
+<span id="line51"></span>
+<span id="line52"></span>}
+<span id="line53"></span>
+<span id="line54"></span>var firstSource = remoteSources[0];
+<span id="line55"></span>var secondSource = remoteSources[1];
+<span id="line56"></span>
+<span id="line57"></span>function callApi(source) {
+<span id="line58"></span>    $.ajax({
+<span id="line59"></span>        url: source.url,
+<span id="line60"></span>        method: 'GET',
+<span id="line61"></span>        timeout: 5000, // Set a timeout for the AJAX call,
+<span id="line62"></span>        success: function(data) {
+<span id="line63"></span>            var date = source.processData(data);
+<span id="line64"></span>            console.log(date, source.url)
+<span id="line65"></span>            divCST.value = date
+<span id="line66"></span>            //  fireJotform()
+<span id="line67"></span>        },
+<span id="line68"></span>        error: function() {
+<span id="line69"></span>            if (source == firstSource) {
+<span id="line70"></span>                // Try the second source if the first source fails
+<span id="line71"></span>                callApi(secondSource)
+<span id="line72"></span>            } else {
+<span id="line73"></span>                // Try the local method if the both the first and second source fails
+<span id="line74"></span>                divCST.value = localSource()
+<span id="line75"></span>                console.log(divCST.value, "localSource")
+<span id="line76"></span>                //  fireJotform()
+<span id="line77"></span>
+<span id="line78"></span>            }
+<span id="line79"></span>
+<span id="line80"></span>        }
+<span id="line81"></span>    });
+<span id="line82"></span>}
+<span id="line83"></span>
+<span id="line84"></span>callApi(firstSource)
+<span id="line85"></span>
+<span id="line86"></span>
+<span id="line87"></span>
+<span id="line88"></span>
+<span id="line89"></span>}
+<span id="line90"></span>
+<span id="line91"></span>fetchTime()
+<span id="line92"></span>
+<span id="line93"></span>// function fireJotform() {
+<span id="line94"></span>console.log(document.getElementById("CST_Time").value)
+<span id="line95"></span>
+<span id="line96"></span>function myWidget() {
+<span id="line97"></span>
+<span id="line98"></span>var widget = document.getElementById("CST_Time")
+<span id="line99"></span>
+<span id="line100"></span>
+<span id="line101"></span>
+<span id="line102"></span>// get widget parameters if any
+<span id="line103"></span>var params = JFCustomWidget.getWidgetSettings();
+<span id="line104"></span>
+<span id="line105"></span>// exposed functions
+<span id="line106"></span>this.init = init;
+<span id="line107"></span>this.getData = getData;
+<span id="line108"></span>// this.fillConditionValue = fillConditionValue;
+<span id="line109"></span>
+<span id="line110"></span>
+<span id="line111"></span>// initialization of the widget
+<span id="line112"></span>function init(formData) {
+<span id="line113"></span>
+<span id="line114"></span>    // send data to Jotform on change input
+<span id="line115"></span>    //  widget.on('change', function() {
+<span id="line116"></span>    //    JFCustomWidget.sendData(getData());  
+<span id="line117"></span>    //    JFCustomWidget.hideWidgetError();
+<span id="line118"></span>
+<span id="line119"></span>    //  });
+<span id="line120"></span>}
+<span id="line121"></span>
+<span id="line122"></span>
+<span id="line123"></span>
+<span id="line124"></span>
+<span id="line125"></span>// get widget data
+<span id="line126"></span>function getData() {
+<span id="line127"></span>
+<span id="line128"></span>    return {
+<span id="line129"></span>        valid: true,
+<span id="line130"></span>        value: widget.value
+<span id="line131"></span>
+<span id="line132"></span>    };
+<span id="line133"></span>}
+<span id="line134"></span>
+<span id="line135"></span>setInterval(() =&gt; {
+<span id="line136"></span>    JFCustomWidget.sendData(getData());
+<span id="line137"></span>}, 500);
+<span id="line138"></span>
+<span id="line139"></span>}
+<span id="line140"></span>// always subscribe to ready event and implement widget related code
+<span id="line141"></span>// inside callback function , it is the best practice while developing widgets
+<span id="line142"></span>JFCustomWidget.subscribe("ready", function(data) {
+<span id="line143"></span>var widget = new myWidget();
+<span id="line144"></span>widget.init(data);
+<span id="line145"></span>
+<span id="line146"></span>JFCustomWidget.subscribe("submit", function() {
+<span id="line147"></span>    JFCustomWidget.sendSubmit(widget.getData());
+<span id="line148"></span>});
+<span id="line149"></span>
+<span id="line150"></span>
+<span id="line151"></span>});
+<span id="line152"></span>
+<span id="line153"></span>// }
+<span id="line154"></span>        
+<span id="line155"></span>        </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line156"></span>    
+<span id="line157"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
+<span id="line158"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span></span></pre></body></html>
