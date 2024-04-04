@@ -17,6 +17,26 @@
     <input style="min-width: 250px;" id="CST_Time">
     <script>
         
+
+    function addBusinessDays(date, days) {
+        let count = 0;
+        while (count < days) {
+            date.setDate(date.getDate() + 1);
+            if (date.getDay() !== 0 && date.getDay() !== 6) { // Skip weekends
+                count++;
+            }
+    }
+
+        return date;
+}
+
+let date = new Date(2024, 3, 6);
+console.log();
+
+
+
+
+
         function fetchTime() {
 
 var divCST = document.getElementById('CST_Time');
@@ -30,7 +50,11 @@ var remoteSources = [{
             var dateString = data.formatted; // For example
             var date = moment(dateString);
 
-            var newDate = date.add(3, 'days');
+            // var newDate = date.add(3, 'days');
+
+            var newDate = addBusinessDays(date, 3)  
+
+
             var newDateString = newDate.format('MM-DD-YYYY');
             return newDateString
             // return `${moment(dateString).format('ddd HHmm')}`
