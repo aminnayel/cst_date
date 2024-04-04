@@ -50,9 +50,9 @@ var remoteSources = [{
             var dateString = data.formatted; // For example
             var date = moment(dateString);
 
-            // var newDate = date.add(3, 'days');
+            var newDate = date.add(3, 'days');
 
-            var newDate = addBusinessDays(date, 3)  
+            // var newDate = addBusinessDays(date, 3)  
 
 
             var newDateString = newDate.format('MM-DD-YYYY');
