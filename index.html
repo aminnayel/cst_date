@@ -17,18 +17,23 @@
     <input style="min-width: 250px;" id="CST_Time">
     <script>
         
+        
 
-    function addBusinessDays(date, days) {
-        let count = 0;
-        while (count < days) {
-            date.setDate(date.getDate() + 1);
-            if (date.getDay() !== 0 && date.getDay() !== 6) { // Skip weekends
-                count++;
-            }
+function addBusinessDays(startDate, days) {
+    let count = 0;
+    let currentDate = moment(startDate);
+
+    while (count < days) {
+        currentDate.add(1, 'days');
+        if (currentDate.day() !== 0 && currentDate.day() !== 6) { // Sunday and Saturday
+            count++;
+        }
     }
 
-        return date;
+    return currentDate;
 }
+
+
 
 
 
@@ -48,12 +53,11 @@ var remoteSources = [{
             var date = moment(dateString);
 
             // var newDate = date.add(3, 'days');
+            // var newDate = addBusinessDays(date, 3)  
+            var newDate = addBusinessDays(date, 3);
 
-            var newDate = addBusinessDays(date, 3)  
 
-console.log(dateString);
-console.log(date);
-console.log(newDate);
+            
             var newDateString = newDate.format('MM-DD-YYYY');
             return newDateString
             // return `${moment(dateString).format('ddd HHmm')}`
