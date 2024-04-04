@@ -53,7 +53,7 @@ var remoteSources = [{
             var date = moment(dateString);
 
             // var newDate = date.add(3, 'days');
-            // var newDate = addBusinessDays(date, 3)  
+
             var newDate = addBusinessDays(date, 3);
 
 
@@ -73,7 +73,11 @@ var remoteSources = [{
             var dateString = data.datetime.slice(0,-6); // For example
             var date = moment(dateString);
 
-            var newDate = date.add(3, 'days');
+            // var newDate = date.add(3, 'days');
+
+            var newDate = addBusinessDays(date, 3);
+
+
             var newDateString = newDate.format('MM-DD-YYYY');
             return newDateString
 
